@@ -6,11 +6,20 @@ const DELAI = 60*10*1000;
 
 //Création d'une variable globale contenant le tableau du jeu
 let board = new Array(); //on peut aussi utiliser = [];
+
 //Création d'une variable globale qui contient le dernier clic
 let carteCliquee = null;
+
+//Pour éviter qu'on ait une action pendant une action de flip de carte
 let actionEnCours = false;
+
+//Contient le score du joueur
 let score = 0;
+
+//Le temps restant au joueur pour gagner
 let timerDelay = new Date(DELAI);
+
+//L'objet contenant le timer qui se déclenche en thread secondaire
 let timer;
 
 function initialiser() {
@@ -53,6 +62,8 @@ function defaite() {
 			clearTimeout(timer);
 			
 			alert("Perdu !");
+			
+			//Retour au menu principal
 			$("#splash-menu").fadeIn();
 		}
 	}
@@ -71,13 +82,15 @@ function victoire() {
 			},
 			method: "POST"
 		}).done(function(){
+			//Rafraichissement du leaderboard
 			renderLeaderboard();
 		});
 		
 		//On attend que l'animation de flip soit terminée en ajoutant un délai
 		setTimeout(function(){
-			//Message de victoire
 			alert("A winner is you");
+			
+			//Retour au menu principal
 			$("#splash-menu").fadeIn();
 		}, 400);
 	}
