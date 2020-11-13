@@ -1,0 +1,117 @@
+body {
+  text-align: center;
+}
+#splash-menu {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#splash-menu .button {
+  font-size: 24px;
+  padding: 1em 2em;
+  margin: 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #000;
+  background-color: #EEE;
+  transition: color 0.3s, background-color 0.3s;
+}
+#splash-menu .button:hover {
+  color: #FFF;
+  background-color: #444;
+}
+#game #board {
+  display: inline-grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(9, 1fr);
+  justify-items: center;
+  grid-gap: 10px;
+  background-color: #CCC;
+  border: 10px solid #CCC;
+  /* Pour ne pas avoir à copier-coller-adapter le code de chacun des fruits, on découpe l'image en image de fond à l'aide d'une boucle en préprocesseur CSS */
+}
+#game #board > * {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+}
+#game #board > * > * {
+  height: 100%;
+}
+#game #board .carte-cachee {
+  background-color: #888;
+}
+#game #board .fruits {
+  background-image: url(res/cards.png);
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+#game #board .fruit-0 {
+  background-position: 0 0;
+}
+#game #board .fruit-1 {
+  background-position: 0 -100px;
+}
+#game #board .fruit-2 {
+  background-position: 0 -200px;
+}
+#game #board .fruit-3 {
+  background-position: 0 -300px;
+}
+#game #board .fruit-4 {
+  background-position: 0 -400px;
+}
+#game #board .fruit-5 {
+  background-position: 0 -500px;
+}
+#game #board .fruit-6 {
+  background-position: 0 -600px;
+}
+#game #board .fruit-7 {
+  background-position: 0 -700px;
+}
+#game #board .fruit-8 {
+  background-position: 0 -800px;
+}
+#game #board .fruit-9 {
+  background-position: 0 -900px;
+}
+#game #board .fruit-10 {
+  background-position: 0 -1000px;
+}
+#game #board .fruit-11 {
+  background-position: 0 -1100px;
+}
+#game #board .fruit-12 {
+  background-position: 0 -1200px;
+}
+#game #board .fruit-13 {
+  background-position: 0 -1300px;
+}
+#game #board .fruit-14 {
+  background-position: 0 -1400px;
+}
+#game #board .fruit-15 {
+  background-position: 0 -1500px;
+}
+#game #board .fruit-16 {
+  background-position: 0 -1600px;
+}
+#game #board .fruit-17 {
+  background-position: 0 -1700px;
+}
+#game #progress {
+  border: 2px solid black;
+  height: 20px;
+  width: 200px;
+  margin: 16px auto;
+  box-sizing: border-box;
+}
